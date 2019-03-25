@@ -10,22 +10,21 @@
    * If setup is headless and you're connecting to wifi:
 	    <ol>
 		  <li>Mount `rootfs` partition on laptop</li>
-      <li>Enable wifi and specify path to wifi config by editing `/etc/network/interfaces`:</li>
+      <li>Enable wifi and specify path to wifi config by editing <code>/etc/network/interfaces</code>:</li>
 		  <code><pre>
 		  auto wlan0
 		  allow-hotplug wlan0
 		  iface wlan0 inet dhcp
-      		wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+     	    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
 	  	</pre></code>
-			</li>
-		  <li>Configure network in `wpa_supplicant.conf` (example):
-		  <code> 
+		  <li>Configure network in <code>wpa_supplicant.conf</code> (example):</li>
+		  <code><pre>
 		  network={
- 	  		ssid="my_ssid"
-   			key_mgmt=WPA-PSK
-   			psk=lkjalfkjklj24NKLhj2l4j0B2vkjh2jh2klj4lkjlktjl2k4jtlk2jlk
+        ssid="my_ssid"
+        key_mgmt=WPA-PSK
+        psk=lkjalfkjklj24NKLhj2l4j0B2vkjh2jh2klj4lkjlktjl2k4jtlk2jlk
   		}
-  		</code></li>
+  		<pre></code>
 		  <li>The raspberrypi will take about a minute to boot up and connect to the network.</li>
 			</ol>
 
