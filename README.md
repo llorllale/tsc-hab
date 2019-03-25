@@ -11,12 +11,12 @@
 	    <ol>
 		  <li>Mount `rootfs` partition on laptop</li>
       <li>Enable wifi and specify path to wifi config by editing `/etc/network/interfaces`:</li>
-		  ```
+		  <code><pre>
 		  auto wlan0
 		  allow-hotplug wlan0
 		  iface wlan0 inet dhcp
       		wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-	  	```
+	  	</pre></code>
 			</li>
 		  <li>Configure network in `wpa_supplicant.conf` (example):
 		  <code> 
