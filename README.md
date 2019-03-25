@@ -11,20 +11,20 @@
 	    <ol>
 		  <li>Mount `rootfs` partition on laptop</li>
       <li>Enable wifi and specify path to wifi config by editing `/etc/network/interfaces`:
-		  ```
+		  <code>
 		  auto wlan0
 		  allow-hotplug wlan0
 		  iface wlan0 inet dhcp
       		wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-	  	```</li>
+	  	</code></li>
 		  <li>Configure network in `wpa_supplicant.conf` (example):
-		  ```
+		  <code> 
 		  network={
  	  		ssid="my_ssid"
    			key_mgmt=WPA-PSK
    			psk=lkjalfkjklj24NKLhj2l4j0B2vkjh2jh2klj4lkjlktjl2k4jtlk2jlk
   		}
-  		```</li>
+  		</code></li>
 		  <li>The raspberrypi will take about a minute to boot up and connect to the network.</li>
 			</ol>
 
