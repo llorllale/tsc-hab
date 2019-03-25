@@ -10,13 +10,14 @@
    * If setup is headless and you're connecting to wifi:
 	    <ol>
 		  <li>Mount `rootfs` partition on laptop</li>
-      <li>Enable wifi and specify path to wifi config by editing `/etc/network/interfaces`:
-		  <code>
+      <li>Enable wifi and specify path to wifi config by editing `/etc/network/interfaces`:</li>
+		  ```
 		  auto wlan0
 		  allow-hotplug wlan0
 		  iface wlan0 inet dhcp
       		wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
-	  	</code></li>
+	  	```
+			</li>
 		  <li>Configure network in `wpa_supplicant.conf` (example):
 		  <code> 
 		  network={
