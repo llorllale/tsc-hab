@@ -1,0 +1,55 @@
+- name: raspi-config enable SPI interface
+  become: yes
+  command: raspi-config nonint do_spi 1
+- name: raspi-config enable serial port hardware, disable login shell over serial
+  become: yes
+  command: raspi-config nonint do_serial 1
+- name: apt update
+  become: yes
+  apt:
+    update_cache: yes
+- name: apt upgrade installed packages
+  become: yes
+  apt:
+    name: "*"
+    state: latest
+- name: apt install python3
+  become: yes
+  apt:
+    name: python3.5
+- name: apt install skygate dependency> wmctrl
+  become: yes
+  apt:
+    name: wmctrl
+- name: apt install skygate dependency> rtl-sdr
+  become: yes
+  apt:
+    name: rtl-sdr
+- name: apt install skygate dependency> dl-fldigi
+  become: yes
+  apt:
+    name: dl-fldigi
+- name: apt install skygate dependency> ssdv
+  become: yes
+  apt:
+    name: ssdv
+- name: apt install raspberry-ui-mods (window manager)
+  become: yes
+  apt:
+    name: raspberrypi-ui-mods
+- name: apt install git
+  become: yes
+  apt:
+    name: git
+- name: git checkout pytrack
+  git:
+    repo: 'https://github.com/raspberrypi/skygate.git'
+    dest: ~/skygate
+    refspec: refs/heads/master
+    version: 45be67357c438a856a9488b02daeed3dc6e0c2e6
+- name: copy skygate sound file
+  command: cp ~/skygate/.asoundrc ~ 
+- name: apt remove dependencies that are no longer required
+  become: yes
+  apt:
+    autoremove: yes
